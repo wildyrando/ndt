@@ -2,7 +2,7 @@
 
 # =====================================================
 #  This script used to setup ndt
-#  Part of https://github.com/wildy3128/ndt.git
+#  Part of https://github.com/wildyrando/ndt.git
 # =====================================================
 
 if ! [[ $(whoami) == "root" ]]; then
@@ -20,7 +20,7 @@ if ! command -V ebtables > /dev/null 2>&1; then
   exit 
 fi
 
-wget -q -O /usr/bin/ndt 'https://raw.githubusercontent.com/wildy3128/ndt/main/ndt.sh'
+wget -q -O /usr/bin/ndt 'https://raw.githubusercontent.com/wildyrando/ndt/main/ndt.sh'
 chmod 700 /usr/bin/ndt
 
 if ! [[ $(echo -e '7' | /usr/bin/ndt | grep -w 'Existed.') ]] then
