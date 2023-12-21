@@ -4,7 +4,7 @@ NDT (Nat Direct Tools) is a simple bash script designed to manage the NAT system
 
 ## Installation:
 ```bash
-wget -O setup.sh 'https://raw.githubusercontent.com/wildy3128/ndt/main/setup.sh' && chmod 700 setup.sh && bash setup.sh
+wget -O setup.sh 'https://raw.githubusercontent.com/wildyrando/ndt/main/setup.sh' && chmod 700 setup.sh && bash setup.sh
 ```
 
 ## Usage:
