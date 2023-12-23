@@ -25,4 +25,4 @@ Make sure you understand the impact of each action you take using this script on
 
 ---
 
-Thank you for using NDT (Nat Direct Tools)!
+Thank you for using NDT (Nat Direct Tools).
