@@ -23,7 +23,7 @@ fi
 wget -q -O /usr/bin/ndt 'https://raw.githubusercontent.com/wildyrando/ndt/main/ndt.sh'
 chmod 700 /usr/bin/ndt
 
-if ! [[ $(echo -e '7' | /usr/bin/ndt | grep -w 'Existed.') ]] then
+if ! [[ $(echo -e '7' | /usr/bin/ndt | grep -w 'Existed.') ]]; then
   echo "Installation failed, please try again !"
   exit
 else
