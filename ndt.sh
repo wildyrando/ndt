@@ -1,5 +1,5 @@
 #!/bin/bash
-# ===================================================================
+# ==============================================================================
 #
 #  NDT / Nat Direct Tools is a simple bash script
 #  designed to automatically manage the NAT system in Proxmox & Virtualizor.
@@ -7,16 +7,26 @@
 #  for VMs and Containers.
 #
 #  This Project licensed under MIT
-#  URL: https://github.com/wildy3128/ndt/blob/main/LICENSE
+#  URL: https://github.com/wildyrando/ndt.git
 #
-# -------------------------------------------------------------------
+# -----------------------------------------------------------------------------
 #
-#  Author  : Wildy3128 <hai@wildy.one>
-#  Version : 1.0.0
+#  Author  : Wildy Sheverando <hai@wildyrando.com>
+#  Version : 1.0.1
 #  Date    : 30-10-2023
 #  Release : Stable
 #
-# ===================================================================
+# =============================================================================
+
+if ! command -V iptables > /dev/null 2>&1; then
+	echo "Iptables not installed"
+ 	exit
+fi
+
+if ! command -V ebtables > /dev/null 2>&1; then
+	echo "ebtables not installed"
+ 	exit
+fi
 
 function add_nat() {
     echo "1). Single Port"
@@ -296,18 +306,18 @@ function del_limit() {
 
 function main() {
     clear
-    echo "===================================================================="
+    echo "==========================================================================="
     echo " NDT / Nat Direct Tools is a simple bash script"
     echo " designed to automatically manage the NAT system in Proxmox & Virtualizor."
     echo " With this script, you can add port forwarding and IP limitations"
     echo " for VMs and Containers."
-    echo "===================================================================="
-    echo " Author  : Wildy3128 <hai@wildy.one>"
+    echo "==========================================================================="
+    echo " Author  : Wildy Sheverando <hai@wildyrando.com>"
     echo " Date    : 30-10-2023"
-    echo " Version : 1.0.0"
+    echo " Version : 1.0.1"
     echo " Release : Stable"
-    echo " License : https://github.com/wildy3128/ndt/blob/main/LICENSE"
-    echo "===================================================================="
+    echo " License : https://github.com/wildyrando/ndt.git"
+    echo "==========================================================================="
     echo ""
     echo " 1). Add new nat rules"
     echo " 2). Delete exist nat rules"
@@ -317,7 +327,7 @@ function main() {
     echo " 6). Delete limitation ebtables rules"
     echo " 7). Exit"
     echo ""
-    echo "===================================================================="
+    echo "==========================================================================="
     echo ""
     read -p "Select [1-7]: " select
     if [[ $select == "1" ]]; then
